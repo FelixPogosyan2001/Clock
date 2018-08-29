@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Practice</title>
+</head>
+<body style="background-image: linear-gradient( 135deg, #FFD26F 10%, #3677FF 100%);">
+</body>
+<script>
+  var center = document.createElement('center');
+    center.id = "center"
+    document.body.insertBefore(center,document.getElementById('clock'))
+  var div = document.createElement('div');
+    div.style.color = 'green';
+    div.id="clock";
+    div.style.position ="relative";
+    div.style.top = "100px"
+    div.style.height ="600px"
+    div.style.width ="600px"
+    document.getElementById('center').appendChild(div);
+  var image = document.createElement('img');
+    image.src = 'sec.png';
+    image.style.transformOrigin="175px center";
+    image.id="sec"
+    image.style.height = "380px"
+    image.style.margin ="0px"
+    image.style.position ="relative";
+    image.style.bottom ="42px";
+    image.style.left ="18px";
+    image.style.zIndex = '2';
+    document.getElementById('clock').appendChild(image);
+  var image2 = document.createElement('img');
+    image2.src = 'minut.png';
+    image2.style.transformOrigin="center 188px";
+    image2.id="min";
+    image2.style.position ="relative";
+    image2.style.bottom ="220px";
+    image2.style.right ="200px"
+    image2.style.zIndex = '2';
+    image2.style.height = "200px"
+    document.getElementById('clock').appendChild(image2);
+  var clock = document.createElement('img');
+  clock.src = 'clock.png';
+  clock.style.height = "520px";
+  clock.style.zIndex = '1'
+  clock.style.position = "relative";
+  clock.style.bottom ="490px"
+  clock.style.right ="10px"
+  document.getElementById('clock').appendChild(clock);
+  var hour = document.createElement('img');
+    hour.src = 'minut.png';
+    hour.style.transformOrigin="center 218px";
+    hour.id="hour";
+    hour.style.position ="absolute";
+    hour.style.bottom ="440px";
+    hour.style.right ="293px"
+    hour.style.zIndex = '2';
+    hour.style.height = "230px"
+    document.getElementById('clock').appendChild(hour);
+  window.onload=()=>{
+    var timer = 1000;
+    var sec = 0;
+    var min = 0;
+    var hour = 0;
+     clock=()=>{
+    sec = sec +6;
+     if(sec+6 == 366){
+      sec = 0;
+      min = min + 6;
+    }
+    else if(min + 6 == 366){
+      min = 0;
+      hour = hour + 30
+    }
+      document.getElementById('sec').style.transform = `rotate(${sec}deg)`
+      document.getElementById('min').style.transform = `rotate(${min}deg)`
+      document.getElementById('hour').style.transform = `rotate(${hour}deg)`
+  }
+  var timer = prompt('How do you want?(fast or normally)')
+    if(timer == 'normally'){
+    setInterval(clock,1000)
+  }
+    else if(timer == 'fast'){
+    setInterval(clock,10)
+  }
+    else{
+    timer = prompt('How do you want?(fast or normally)')
+  }
+}
+</script>
+</html>
