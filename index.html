@@ -86,8 +86,16 @@
     setInterval(clock,10)
   }
     else{
-    timer = prompt('How do you want?(fast or normally)')
-  }
+      while(timer !== 'fast' && timer !== 'normally' ){
+        timer = prompt('How do you want?(fast or normally)');
+        if(timer == 'normally'){
+        setInterval(clock,1000)
+        }
+        else if(timer == 'fast'){
+         setInterval(clock,10)
+        }
+    }
+}
 }
 </script>
 </html>
