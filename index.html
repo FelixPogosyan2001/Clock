@@ -1,4 +1,4 @@
-<html>
+<html style="height:100%;overflow:hidden">
 <head>
 <meta charset="utf-8">
 <title>Clock</title>
@@ -6,12 +6,14 @@
 <body style="background-image: linear-gradient( 135deg, #FFD26F 10%, #3677FF 100%);">
 </body>
 <script>
+  document.body.style.backgroundImage = "linear-gradient( 135deg, #F0FF00 10%, #58CFFB 100%)"
   var center = document.createElement('center');
     center.id = "center"
     document.body.insertBefore(center,document.getElementById('clock'))
   var div = document.createElement('div');
     div.style.color = 'green';
     div.id="clock";
+    div.style.marginTop = "50px";
     div.style.position ="relative";
     div.style.top = "100px"
     div.style.height ="600px"
@@ -39,13 +41,13 @@
     image2.style.height = "200px"
     document.getElementById('clock').appendChild(image2);
   var clock = document.createElement('img');
-  clock.src = 'clock.png';
-  clock.style.height = "520px";
-  clock.style.zIndex = '1'
-  clock.style.position = "relative";
-  clock.style.bottom ="490px"
-  clock.style.right ="10px"
-  document.getElementById('clock').appendChild(clock);
+    clock.src = 'clock.png';
+    clock.style.height = "520px";
+    clock.style.zIndex = '1'
+    clock.style.position = "relative";
+    clock.style.bottom ="490px"
+    clock.style.right ="10px"
+    document.getElementById('clock').appendChild(clock);
   var hour = document.createElement('img');
     hour.src = 'minut.png';
     hour.style.transformOrigin="center 218px";
@@ -56,6 +58,7 @@
     hour.style.zIndex = '2';
     hour.style.height = "230px"
     document.getElementById('clock').appendChild(hour);
+  //------------------------------------------------------------
   window.onload=()=>{
     var timer = 1000;
     var sec = 0;
